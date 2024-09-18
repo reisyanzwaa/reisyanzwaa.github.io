@@ -1,0 +1,526 @@
+/* General reset for box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: 100% 100%;
+}
+
+/* Video Background */
+#background-video {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -1; /* Send the video behind other content */
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Confirmation Container */
+.confirmation-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px; 
+    flex-direction: row;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+    gap: 40px;
+    flex-direction: row;
+    align-items: flex-start;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    filter: brightness(100%) saturate(120%);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Water Shapes */
+.water-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3a506b, #1c2541); 
+    opacity: 0.2;
+    z-index: -2;
+    pointer-events: none;
+    transition: transform 0.6s ease;
+}
+
+.water-shape.small {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: -75px;
+    transform: scale(1) rotate(15deg);
+}
+
+.water-shape.medium {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+    transform: scale(1) rotate(-15deg);
+}
+
+.water-shape.large {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2) rotate(30deg);
+    background: linear-gradient(135deg, #0b3954, #f25f5c); /* Dark blue to coral */
+    opacity: 0.15;
+}
+
+.confirmation-container:hover .water-shape.small {
+    transform: scale(1.4) rotate(25deg);
+}
+
+.confirmation-container:hover .water-shape.medium {
+    transform: scale(1.3) rotate(-25deg);
+}
+
+.confirmation-container:hover .water-shape.large {
+    transform: translate(-50%, -50%) scale(1.5) rotate(50deg);
+}
+
+/* Confirmation Container Hover Effects */
+.confirmation-container::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 140%;
+    height: 140%;
+    background: rgba(0, 200, 255, 0.15); /* Teal tint */
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    z-index: -1;
+    transition: transform 0.4s ease;
+}
+
+.confirmation-container:hover::before {
+    transform: rotate(0) scale(1.3);
+}
+
+.confirmation-container:hover {
+    transform: scale(1.04);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.2);
+}
+
+/* Confirmation Message */
+.confirmation-message {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.confirmation-message h1 {
+    font-size: 44px;
+    margin-bottom: 24px;
+    color: #0b3954; /* Muted dark blue */
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid #f25f5c; /* Coral */
+    padding-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.confirmation-message h1:hover {
+    color: #f25f5c; /* Coral */
+    transform: scale(1.05);
+}
+
+.confirmation-message p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Billing Info */
+.billing-info {
+    flex: 1;
+    background: #fff9c4; /* Soft yellow */
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.billing-info h3 {
+    margin-top: 30px;
+    font-size: 28px;
+    color: #444;
+    font-weight: 600;
+}
+
+.billing-info p {
+    font-size: 16px;
+    color: #666;
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+/* Track Order Button */
+.track-order-btn {
+    margin-top: 25px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg,#0d6385, #5be9ee); 
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.track-order-btn:hover {
+    background: linear-gradient(135deg, #f7e92b, #9cd3f3);
+    transform: translateY(-6px); 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Order Summary */
+.order-summary {
+    text-align: center;
+    flex: 2;
+    background: #e1f5fe; /* Soft blue */
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.order-summary:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.order-summary h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 2px solid #f25f5c;
+    padding-bottom: 10px;
+}
+
+.product-summary {
+    margin-bottom: 30px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+.product-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.price {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Summary Totals */
+.summary-totals {
+    margin-top: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #333;
+    padding: 10px 0;
+}
+
+.summary-item.total {
+    font-size: 24px;
+    font-weight: 700;
+    border-top: 2px solid #ddd;
+    padding-top: 18px;
+    color: #000;
+}
+
+/* Print Button */
+.print-btn {
+    margin-top: 20px; 
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #0d6385, #5be9ee); 
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+}
+
+/* Hover effect for print button */
+.print-btn:hover {
+    background: linear-gradient(135deg, #f7e92b, #9cd3f3); 
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Logo Container */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+/* Logo Shape */
+.logo {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #87ceeb, #b0e0e6); /* Sky blue gradient */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border: 5px solid transparent; /* Initial border */
+}
+
+/* Logo Image */
+.logo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%; /* Adjust size as needed */
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Logo Hover Effects */
+.logo:hover {
+    transform: scale(1.12); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    border-color: #87ceeb; /* Sky blue border on hover */
+}
+
+.logo:hover img {
+    opacity: 0.85; /* Slightly fade image on hover */
+}
+
+/* Logo Border */
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid rgba(255, 255, 255, 0.4); /* White semi-transparent border */
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    z-index: 0;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Logo Border Hover Effect */
+.logo:hover::before {
+    border-color: rgba(135, 206, 235, 0.8); /* Sky blue color on hover */
+    box-shadow: 0 0 30px rgba(135, 206, 235, 0.8); /* Stronger glow on hover */
+}
+
+/* Additional Glow Effect */
+.logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15); /* Outer glow */
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+/* Logo Hover Glow Effect */
+.logo:hover::after {
+    opacity: 0.25; /* Increase glow on hover */
+}
+
+
+/* Payment Method Section */
+.payment-method p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Payment Options Styling */
+.payment-options {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px; 
+    background: linear-gradient(135deg, #f0f4f8, #dfe7fd); 
+    border-radius: 12px; 
+    border: 2px solid transparent;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1); 
+    font-size: 14px; 
+    color: #333;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glowing Hover Effect */
+.payment-option:hover {
+    background: linear-gradient(135deg, #dbe9ff, #dfe7fd); 
+    border-color: #0b3954; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-3px); 
+}
+
+/* Animated glow on hover */
+.payment-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 150%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.payment-option:hover::before {
+    left: 100%;
+}
+
+/* Custom Radio Button */
+.payment-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.payment-option .custom-radio {
+    width: 18px; 
+    height: 18px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: 12px; 
+    position: relative;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the custom radio when selected */
+.payment-option input:checked + .custom-radio {
+    background: #0b3954; 
+    border-color: #f25f5c; 
+    transform: scale(1.05); 
+    box-shadow: 0 0 8px rgba(11, 57, 84, 0.4); 
+}
+
+/* Adding checkmark */
+.payment-option input:checked + .custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px; 
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* Smooth transition for label text */
+.payment-option input:checked + .custom-radio + span {
+    color: #0b3954;
+    font-weight: 600;
+    transition: color 0.4s ease, font-weight 0.4s ease;
+}
+
+/* Smooth ripple effect */
+.payment-option input:checked + .custom-radio::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 57, 84, 0.4);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.payment-option input:checked + .custom-radio::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
