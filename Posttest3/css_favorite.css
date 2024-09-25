@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f8e1e1, #d1f3f0); /* Gradasi latar belakang pink dan biru soft */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #ff6b81; /* Warna header pink soft */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid #ff9f9f; /* Garis bawah header pink lembut */
+    font-family: 'Dancing Script', cursive; /* Font untuk header */
+    font-size: 3em; /* Ukuran font untuk judul */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-size: 1.2em;
+    font-family: 'Quicksand', sans-serif; /* Font untuk link navigasi */
+}
+
+nav a:hover {
+    color: #ffffff; /* Warna saat hover */
+    text-shadow: 0 0 10px #ff9f9f; /* Efek bayangan saat hover */
+}
+
+.main-title {
+    font-family: 'Sacramento', cursive; /* Font untuk judul */
+    font-size: 4em;
+    color: #ff6b81; /* Warna pink soft */
+    margin: 20px 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    padding: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9); /* Latar belakang putih transparan */
+    border-radius: 20px; /* Sudut lebih bulat */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 15px;
+    border: 2px solid #a2d5f2; /* Warna border biru soft */
+    border-radius: 10px;
+    width: 300px;
+    transition: border 0.3s, box-shadow 0.3s;
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif; /* Font untuk input */
+}
+
+input[type="text"]:focus {
+    border-color: #ff6b81; /* Warna border saat fokus */
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 107, 129, 0.5); /* Efek cahaya saat fokus */
+}
+
+button {
+    padding: 15px 25px;
+    border: none;
+    background: #8fc0a9; /* Warna hijau soft untuk tombol */
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1.1em;
+    font-family: 'Quicksand', sans-serif; /* Font untuk tombol */
+}
+
+button:hover {
+    background: #76b49a; /* Warna tombol saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+ul {
+    list-style-type: none; /* Menghilangkan bullet */
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: white;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    font-family: 'Roboto', sans-serif; /* Font untuk item daftar */
+}
+
+li:hover {
+    transform: translateY(-5px); /* Efek angkat saat hover */
+    background: #d1f3e0; /* Warna latar belakang hijau lembut saat hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff6b81; /* Warna footer pink soft */
+    color: white;
+    font-family: 'Poppins', sans-serif; /* Font untuk footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk Light Mode */
+body {
+    background-color: #ffffff; /* Warna latar belakang light mode */
+    color: #000000; /* Warna teks light mode */
+}
+
+.header, .promo-banner, .product-section, .review-section, footer {
+    transition: background-color 0.3s, color 0.3s; /* Animasi transisi warna */
+}
+
+/* Gaya untuk Dark Mode */
+body.dark-mode {
+    background-color: #333333; /* Warna latar belakang dark mode */
+    color: #ffffff; /* Warna teks dark mode */
+}
+
+.header.dark-mode, .promo-banner.dark-mode, .product-section.dark-mode, .review-section.dark-mode, footer.dark-mode {
+    background-color: #444444; /* Warna latar belakang elemen saat dark mode */
+}

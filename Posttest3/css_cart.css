@@ -1,0 +1,194 @@
+/* Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Menggunakan font modern */
+    background-color: #f8f9fa; /* Warna latar belakang yang lebih cerah */
+    color: #343a40; /* Warna teks gelap */
+    line-height: 1.6; /* Keterbacaan yang lebih baik */
+}
+
+header {
+    background: linear-gradient(90deg, #6f42c1, #d82d9e); /* Gradasi ungu dan merah muda */
+    color: white;
+    padding: 40px 0; /* Padding lebih besar untuk header */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih dalam */
+    border-radius: 0 0 15px 15px; /* Sudut melengkung di bagian bawah header */
+    animation: fadeIn 0.5s ease; /* Animasi muncul */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+nav {
+    margin: 20px 0; /* Margin sedikit lebih besar */
+}
+
+nav a {
+    color: white;
+    margin: 0 25px; /* Jarak antar link sedikit lebih besar */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em; /* Ukuran font lebih besar */
+    transition: color 0.3s, transform 0.3s; /* Tambahkan efek transformasi */
+}
+
+nav a:hover {
+    color: #ffd700; /* Warna emas saat hover */
+    transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+.category-button {
+    margin: 10px;
+    padding: 15px 30px; /* Padding lebih besar */
+    background-color: #28a745; /* Hijau cerah */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Sudut melengkung yang lebih halus */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    font-size: 1.2em; /* Ukuran font tombol yang lebih besar */
+    animation: bounceIn 0.5s ease; /* Animasi muncul */
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.category-button:hover {
+    background-color: #218838; /* Hijau lebih gelap saat hover */
+    transform: translateY(-3px); /* Efek elevasi saat hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+}
+
+.cart-list {
+    margin-top: 30px;
+    padding: 25px; /* Padding lebih besar */
+    border-radius: 15px; /* Sudut melengkung yang halus */
+    background-color: #ffffff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Bayangan lebih lembut */
+    transition: transform 0.3s; /* Efek transformasi */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center; /* Pusatkan konten secara vertikal */
+    margin: 20px 0; /* Jarak antar item */
+    border: 1px solid #dee2e6; /* Batas halus */
+    border-radius: 10px; /* Sudut melengkung */
+    padding: 20px; /* Padding lebih besar */
+    transition: transform 0.2s, box-shadow 0.3s;
+    background-color: #f1f1f1; /* Latar belakang item keranjang yang lebih cerah */
+    animation: slideIn 0.5s ease; /* Animasi muncul untuk item */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.cart-item:hover {
+    transform: translateY(-5px); /* Efek elevasi saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Bayangan lebih dalam saat hover */
+}
+
+.cart-item img {
+    width: 130px; /* Ukuran gambar */
+    height: auto;
+    border-radius: 10px; /* Sudut melengkung */
+    margin-right: 20px; /* Ruang antara gambar dan detail */
+}
+
+.item-details {
+    flex-grow: 1; /* Memungkinkan bagian ini tumbuh */
+}
+
+.item-images {
+    display: flex; /* Menampilkan gambar secara horizontal */
+    gap: 15px; /* Jarak antar gambar */
+}
+
+.item-images img {
+    width: 70px; /* Ukuran gambar kecil */
+    height: auto;
+    border-radius: 5px; /* Sudut melengkung untuk gambar kecil */
+    transition: transform 0.2s; /* Efek transformasi pada gambar */
+}
+
+.item-images img:hover {
+    transform: scale(1.1); /* Efek zoom saat hover pada gambar */
+}
+
+.remove-item {
+    background-color: #dc3545; /* Merah cerah untuk tombol hapus */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Padding lebih besar */
+    border-radius: 30px; /* Sudut melengkung */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.remove-item:hover {
+    background-color: #c82333; /* Warna lebih gelap saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+footer {
+    text-align: center;
+    padding: 25px; /* Padding lebih besar */
+    background-color: #f1f1f1; /* Warna latar belakang footer yang lebih cerah */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Bayangan kecil di atas footer */
+    border-radius: 15px; /* Sudut melengkung untuk footer */
+}
+
+#cart-list-formal h3,
+#cart-list-cewek h3,
+#cart-list-cowok h3 {
+    margin-bottom: 15px;
+    color: #6f42c1; /* Warna judul kategori yang lebih cerah */
+    font-size: 1.8em; /* Ukuran font lebih besar untuk judul */
+    border-bottom: 2px solid #6f42c1; /* Garis bawah untuk judul */
+    animation: fadeInUp 0.5s ease; /* Animasi muncul untuk judul */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cart-list {
+    display: none; /* Sembunyikan daftar keranjang secara default */
+}

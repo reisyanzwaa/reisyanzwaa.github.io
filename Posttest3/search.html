@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Produk</title>
+    <link rel="stylesheet" href="css_search.css"> <!-- Link ke file CSS Anda -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Link ke Google Fonts -->
+</head>
+<body>
+    <div class="nav-icons">
+        <div class="favorite-icon" onclick="toggleFavorites()">
+            <i class="fas fa-heart"></i> <!-- Icon for favorites -->
+        </div>
+        
+        <div class="account-icon" onclick="window.location.href='login.html'">
+            <i class="fas fa-user"></i> <!-- Icon for account/login -->
+        </div>
+
+        <div class="cart-icon" onclick="openCart()">
+            <i class="fas fa-shopping-cart"></i> <!-- Icon for shopping cart -->
+        </div>
+    </div>
+
+    <h1>Pencarian Produk</h1>
+    <div class="search-container">
+        <div class="search-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="search-form">
+                        <label for="criteria">Pilih kriteria pencarian:</label>
+                        <select id="criteria">
+                            <option value="">-- Pilih Kriteria --</option>
+                            <option value="name">Nama Produk</option>
+                            <option value="size">Ukuran Produk</option>
+                            <option value="color">Warna Produk</option>
+                        </select>
+                        <button onclick="searchProduct()">Cari Produk</button>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="search-results" id="searchResults">
+                        <!-- Hasil pencarian akan muncul di sini -->
+                    </div>
+                    <button onclick="goBack()">Kembali</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchProduct() {
+            const criteria = document.getElementById('criteria').value;
+            const resultsDiv = document.getElementById('searchResults');
+
+            // Cek jika tidak ada kriteria yang dipilih
+            if (!criteria) {
+                resultsDiv.innerText = "Silakan pilih kriteria pencarian terlebih dahulu.";
+                document.querySelector('.search-card').classList.add('flipped');
+                return; // Hentikan eksekusi jika tidak ada kriteria
+            }
+
+            // Simulasi hasil pencarian
+            const results = `Kriteria yang dipilih: ${criteria}`;
+            resultsDiv.innerText = results; // Menampilkan hasil pencarian
+
+            // Menampilkan card back
+            document.querySelector('.search-card').classList.add('flipped');
+        }
+
+        function goBack() {
+            // Mengembalikan tampilan ke card front
+            document.querySelector('.search-card').classList.remove('flipped');
+            document.getElementById('searchResults').innerText = ""; // Menghapus hasil pencarian saat kembali
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Chaussée - Toko</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="hamburger" onclick="toggleMenu()">&#9776; <!-- Hamburger icon -->
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Home </a></li>
+                        <li><a href="about.html">About </a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+            <div class="nav-icons">
+                <div class="favorite-icon" onclick="window.location.href='search.html'">
+                    <i class="fas fa-search"></i> <!-- Icon for search -->
+                </div>
+                <div class="toggle-mode" onclick="toggleDarkMode()">
+                    <i class="fas fa-adjust"></i> <!-- Ikon untuk toggle mode -->
+                </div>
+            </div>
+            <div class="logo">
+                <img src="baglogo.png" alt="Logo Le Chaussée">
+            </div>
+            <div class="nav-icons">
+                <div class="favorite-icon" onclick="window.location.href='favorites.html'">
+                    <i class="fas fa-heart"></i> <!-- Icon for favorites -->
+                </div>
+                <div class="account-icon" onclick="window.location.href='login.html'">
+                    <i class="fas fa-user"></i> <!-- Icon for account/login -->
+                </div>
+                <div class="cart-icon" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i> <!-- Icon for shopping cart -->
+                </div>
+            </div>            
+        </div>
+    </header>
+    
+    <!-- Section Promo Banner -->
+    <section class="promo-banner">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="sepatu_rbiru-removebg-preview.png" alt="Promo 1">
+                    <div class="caption">Promo Spesial Sepatu Biru!</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="sayapputih-removebg-preview.png" alt="Promo 2">
+                    <div class="caption">Dapatkan Sepatu Putih Terbaru!</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="olgabolongpink-removebg-preview.png" alt="Promo 3">
+                    <div class="caption">Temukan Gaya dengan Sepatu Ungu!</div>
+                </div>
+            </div>
+            <!-- Tombol Kontrol untuk Menggeser Slide -->
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+        <div class="carousel-indicators">
+            <span class="indicator active" onclick="showSlide(0)"></span>
+            <span class="indicator" onclick="showSlide(1)"></span>
+            <span class="indicator" onclick="showSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Section Featured Products -->
+    <section class="product-section">
+        <h2>Produk Unggulan</h2>
+
+        <div class="promo-text">
+            <h1>Le Chaussée</h1>
+            <p>Jelajahi tren terbaru dalam sepatu Le Chaussée.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="bintangpink-removebg-preview.png" alt="Nike Air Max 2021" class="product-image">
+                <h3>Nike Air Max 2021</h3>
+                <p class="product-price">Rp 2,499,000</p>
+                <button class="buy-now-btn" onclick="addToCart('Nike Air Max 2021')">Beli Sekarang</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="garisolgabiru-removebg-preview.png" alt="Nike Air Force 1" class="product-image">
+                <h3>Nike Air Force 1</h3>
+                <p class="product-price">Rp 1,999,000</p>
+                <button class="buy-now-btn" onclick="addToCart('Nike Air Force 1')">Beli Sekarang</button>
+            </div>
+            <!-- Tambahkan lebih banyak produk di sini -->
+        </div>
+    </section>
+
+    <!-- Section Product Reviews -->
+    <section class="review-section">
+        <h2>Apa Kata Pelanggan Kami</h2>
+        <div class="review-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <img src="bntanghitam-removebg-preview.png" alt="Nike Air Max 2021" class="review-image">
+                <div class="review-content">
+                    <h3 class="review-title">Nike Air Max 2021</h3>
+                    <div class="review-rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <p><strong>Ukuran:</strong> 42</p>
+                    <p class="review-text">"Nike Air Max 2021 sangat nyaman! Sangat direkomendasikan."</p>
+                    <span class="review-author">- Budi Santoso</span>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <img src="sayappink-removebg-preview.png" alt="Nike Air Force 1" class="review-image">
+                <div class="review-content">
+                    <h3 class="review-title">Nike Air Force 1</h3>
+                    <div class="review-rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <p><strong>Ukuran:</strong> 39</p>
+                    <p class="review-text">"Kualitas dan desain yang bagus. Saya suka sepatu Nike baru saya!"</p>
+                    <span class="review-author">- Siti Rahmawati</span>
+                </div>
+            </div>
+            <!-- Tambahkan lebih banyak ulasan sesuai kebutuhan -->
+        </div>
+    </section>
+
+    <div class="hamburger" onclick="toggleMenu()">&#9776; <!-- Hamburger icon -->
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home </a></li>
+                <li><a href="about.html">About </a></li>
+            </ul>
+        </nav>
+    </div>    
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-4">Tentang Saya</h1>
+        <p class="mb-4">Halo! Nama saya Reisya Nazwa Anindya. Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Universitas Mulawarman. Saya memiliki minat yang besar di bidang teknologi, desain web, dan pengembangan aplikasi.</p>
+        
+        <h2 class="text-2xl font-semibold mt-4">Pendidikan</h2>
+        <ul class="list-disc pl-5 mb-4">
+            <li>Universitas Mulawarman, Program Studi Teknologi Informasi</li>
+            <li>SMA NEGERI 2 SAMARINDA</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-4">Pengalaman</h2>
+        <ul class="list-disc pl-5 mb-4">
+            <li>Anggota UKM Teknologi Informasi di Universitas Mulawarman.</li>
+            <li>Proyek desain web untuk berbagai organisasi.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mt-4">Hobi</h2>
+        <p class="mb-4">Di waktu luang, saya suka berkreasi dengan desain, menjelajahi teknologi terbaru, dan berolahraga.</p>
+
+        <h2 class="text-2xl font-semibold mt-4">Kontak</h2>
+        <p>Email: reisyacantik@.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/reisyanazwaa/" class="text-blue-600">linkedin.com/in/reisyanazwa</a></p>
+    </div>
+    <script src="script.js"></script> <!-- Link ke file JavaScript -->
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Le Chaussée. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>

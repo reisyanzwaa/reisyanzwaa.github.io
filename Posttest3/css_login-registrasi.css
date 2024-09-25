@@ -1,0 +1,168 @@
+body {
+    font-family: 'Arial', sans-serif; /* Font default */
+    background-color: #e0f7fa; /* Latar belakang lembut */
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px; /* Lebar maksimum untuk konten */
+    margin: auto; /* Pusatkan konten */
+    padding: 30px; /* Padding yang lebih besar */
+    background-color: #ffffff; /* Latar belakang putih */
+    border-radius: 15px; /* Sudut melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    transition: transform 0.3s ease; /* Efek transisi saat hover */
+}
+
+.login-container:hover {
+    transform: translateY(-5px); /* Efek hover */
+}
+
+.login-container h2 {
+    text-align: center; /* Pusatkan judul */
+    color: #333; /* Warna teks judul */
+    font-size: 24px; /* Ukuran font yang lebih besar */
+    margin-bottom: 20px; /* Jarak bawah judul */
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column; /* Susun input secara vertikal */
+}
+
+.login-container input {
+    margin: 10px 0; /* Jarak antar input */
+    padding: 12px; /* Padding input */
+    border: 1px solid #b0bec5; /* Border lembut */
+    border-radius: 8px; /* Sudut melengkung input */
+    font-size: 16px; /* Ukuran font */
+    transition: border-color 0.3s; /* Efek transisi pada border */
+}
+
+.login-container input:focus {
+    border-color: #ff6b81; /* Warna border saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
+.login-container button {
+    margin-top: 10px; /* Jarak antara input dan tombol */
+    padding: 12px;
+    background-color: #ff6b81; /* Warna tombol */
+    border: none; /* Tanpa border */
+    color: white; /* Warna teks */
+    border-radius: 8px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor pointer saat hover */
+    font-size: 16px; /* Ukuran font tombol */
+    transition: background-color 0.3s; /* Efek transisi pada tombol */
+}
+
+.login-container button:hover {
+    background-color: #ff4c61; /* Warna tombol saat hover */
+}
+
+.login-container .register-prompt {
+    text-align: center; /* Pusatkan teks */
+    margin-top: 15px; /* Jarak antara form dan teks */
+}
+
+.login-container .register-prompt a {
+    color: #ff6b81; /* Warna link yang sesuai */
+    text-decoration: none; /* Tanpa garis bawah */
+    font-weight: bold; /* Cetak tebal pada link */
+}
+
+.login-container .register-prompt a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+footer {
+    text-align: center; /* Pusatkan teks footer */
+    margin-top: 20px; /* Jarak antara konten dan footer */
+}
+
+.footer-content {
+    padding: 10px; /* Padding footer */
+    background-color: #f1f1f1; /* Latar belakang footer */
+}
+
+.registration-container {
+    max-width: 400px; /* Lebar maksimum untuk konten */
+    margin: auto; /* Pusatkan konten */
+    padding: 30px; /* Padding yang lebih besar */
+    background-color: #ffffff; /* Latar belakang putih */
+    border-radius: 15px; /* Sudut melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    transition: transform 0.3s ease; /* Efek transisi saat hover */
+}
+
+.registration-container:hover {
+    transform: translateY(-5px); /* Efek hover */
+}
+
+.registration-container h2 {
+    text-align: center; /* Pusatkan judul */
+    color: #333; /* Warna teks judul */
+    font-size: 24px; /* Ukuran font yang lebih besar */
+    margin-bottom: 20px; /* Jarak bawah judul */
+}
+
+.registration-container form {
+    display: flex;
+    flex-direction: column; /* Susun input secara vertikal */
+}
+
+.registration-container input {
+    margin: 10px 0; /* Jarak antar input */
+    padding: 12px; /* Padding input */
+    border: 1px solid #b0bec5; /* Border lembut */
+    border-radius: 8px; /* Sudut melengkung input */
+    font-size: 16px; /* Ukuran font */
+    transition: border-color 0.3s; /* Efek transisi pada border */
+}
+
+.registration-container input:focus {
+    border-color: #ff6b81; /* Warna border saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
+.registration-container button {
+    margin-top: 10px; /* Jarak antara input dan tombol */
+    padding: 12px;
+    background-color: #ff6b81; /* Warna tombol */
+    border: none; /* Tanpa border */
+    color: white; /* Warna teks */
+    border-radius: 8px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor pointer saat hover */
+    font-size: 16px; /* Ukuran font tombol */
+    transition: background-color 0.3s; /* Efek transisi pada tombol */
+}
+
+.registration-container button:hover {
+    background-color: #ff4c61; /* Warna tombol saat hover */
+}
+
+.registration-container .login-prompt {
+    text-align: center; /* Pusatkan teks */
+    margin-top: 15px; /* Jarak antara form dan teks */
+}
+
+.registration-container .login-prompt a {
+    color: #ff6b81; /* Warna link yang sesuai */
+    text-decoration: none; /* Tanpa garis bawah */
+    font-weight: bold; /* Cetak tebal pada link */
+}
+
+.registration-container .login-prompt a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+footer {
+    text-align: center; /* Pusatkan teks footer */
+    margin-top: 20px; /* Jarak antara konten dan footer */
+}
+
+.footer-content {
+    padding: 10px; /* Padding footer */
+    background-color: #f1f1f1; /* Latar belakang footer */
+}

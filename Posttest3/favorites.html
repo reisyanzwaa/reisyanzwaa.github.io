@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Favorit</title>
+        <link rel="stylesheet" href="css_favorite.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Montserrat&family=Merriweather&family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato&family=Poppins:wght@300;400;600&family=Quicksand:wght@300;400;600&family=Roboto:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@300;400&family=Poppins:wght@300;400;600&family=Quicksand:wght@300;400&family=Roboto:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+
+
+
+    </head>    
+<body>
+    <header>
+        <h1>Favorit Anda</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="login.html">Akun</a>
+            <a href="cart.html">Keranjang</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Daftar Favorit</h2>
+        
+        <!-- Form untuk menambahkan item ke daftar favorit -->
+        <form id="favorite-form" onsubmit="addFavorite(event)">
+            <input type="text" id="favorite-input" placeholder="Masukkan nama produk" required>
+            <button type="submit">Tambah ke Favorit</button>
+        </form>
+
+        <ul id="favorites-list">
+            <!-- Daftar produk favorit akan ditampilkan di sini -->
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Toko Sepatu Anda</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menambahkan item ke daftar favorit
+        function addFavorite(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir
+
+            const input = document.getElementById('favorite-input');
+            const favoriteItem = input.value.trim(); // Ambil nilai input
+
+            if (favoriteItem) {
+                const favoritesList = document.getElementById('favorites-list');
+                
+                // Membuat elemen baru untuk item favorit
+                const li = document.createElement('li');
+                li.textContent = favoriteItem;
+
+                // Menambahkan item ke daftar
+                favoritesList.appendChild(li);
+                
+                // Mengosongkan input setelah ditambahkan
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
