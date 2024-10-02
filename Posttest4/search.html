@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Produk</title>
+    <link rel="stylesheet" href="css_search.css"> <!-- Link ke file CSS Anda -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Link ke Google Fonts -->
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="ngengvideosepatu (1).mp4" type="video/mp4"> <!-- Ganti dengan jalur video Anda -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="nav-icons">
+        <div class="favorite-icon" id="favorite-icon">
+            <i class="fas fa-heart"></i> <!-- Icon for favorites -->
+        </div>
+        
+        <div class="account-icon" onclick="window.location.href='login.html'">
+            <i class="fas fa-user"></i> <!-- Icon for account/login -->
+        </div>
+
+        <div class="cart-icon" id="cart-icon">
+            <i class="fas fa-shopping-cart"></i> <!-- Icon for shopping cart -->
+        </div>
+    </div>
+
+    <h1>Pencarian Produk</h1>
+    <form id="search-form" action="search.php" method="POST">
+        <label for="criteria">Pilih kriteria pencarian:</label>
+        <select id="criteria" name="criteria" required>
+            <option value="">-- Pilih Kriteria --</option>
+            <option value="name">Nama Produk</option>
+            <option value="size">Ukuran Produk</option>
+            <option value="color">Warna Produk</option>
+        </select>
+        <input type="text" id="search-query" name="searchQuery" placeholder="Masukkan kata kunci pencarian" required>
+        <button type="submit">Cari Produk</button>
+    </form>
+
+    <div id="search-results"></div>
+
+    <script>
+        // Cek jika listener sudah ada
+        const searchForm = document.getElementById('search-form');
+        if (searchForm) {
+            searchForm.addEventListener('submit', searchProduct);
+        }
+
+        document.getElementById('favorite-icon').addEventListener('click', toggleFavorites);
+        document.getElementById('cart-icon').addEventListener('click', openCart);
+
+        // Implement the toggleFavorites and openCart functions
+        function toggleFavorites() {
+            // TO DO: Implement favorite functionality
+            console.log('Toggle favorites');
+        }
+
+        function openCart() {
+            // TO DO: Implement cart functionality
+            console.log('Open cart');
+        }
+
+        // Implement the searchProduct function
+        function searchProduct(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const criteria = document.getElementById('criteria').value;
+            const searchQuery = document.getElementById('search-query').value;
+            const productSize = document.getElementById('productSize').value; // Dapatkan ukuran produk
+
+            // Cek jika semua input sudah diisi
+            if (!criteria || !searchQuery || !productSize) {
+                alert('Semua input harus diisi!');
+                return;
+            }
+
+            // Kirim permintaan ke backend API
+            fetch('/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ criteria, searchQuery, productSize })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const searchResultsDiv = document.getElementById('search-results');
+                searchResultsDiv.innerHTML = ''; // Clear previous results
+
+                // Display search results
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach(result => {
+                        const resultHTML = `
+                            <div>
+                                <h2>${result.name}</h2>
+                                <p>${result.description}</p>
+                            </div>
+                        `;
+                        searchResultsDiv.innerHTML += resultHTML;
+                    });
+                } else {
+                    searchResultsDiv.innerHTML = '<p>Tidak ada hasil ditemukan.</p>'; // Tampilkan pesan jika tidak ada hasil
+                }
+            })
+            .catch(error => console.error('Error searching products:', error));
+        }
+    </script>
+</body>
+</html>

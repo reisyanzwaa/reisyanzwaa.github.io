@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Le Chaussée</title>
+    <link rel="stylesheet" href="css_about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="videoabout.mp4" type="video/mp4"> <!-- Ganti dengan path video Anda -->
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="baglogo.png" alt="Logo Le Chaussée">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li> <!-- Menambahkan navigasi untuk kembali ke index -->
+                    <li><a href="search.html"><i class="fas fa-search"></i></a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
+                    <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                    <li><a href="#" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <h1>Tentang Le Chaussée</h1>
+        <div class="about-content">
+            <p>Le Chaussée adalah toko sepatu yang menghadirkan berbagai koleksi sepatu terbaik untuk memenuhi kebutuhan gaya dan kenyamanan Anda. Kami berkomitmen untuk menyediakan produk berkualitas tinggi dengan desain yang menarik dan nyaman digunakan.</p>
+
+            <h2>Sejarah Kami</h2>
+            <p>Le Chaussée didirikan pada tahun 2024 oleh <strong>Reisya Nazwa Anindya</strong>, seorang penggemar sepatu dan fashion yang memiliki visi untuk menyediakan sepatu berkualitas tinggi kepada masyarakat Indonesia.</p>
+
+            <h2>Pemilik Kami</h2>
+            <div class="owner-section">
+                <img src="fotoreisya.jpg" alt="Foto Pemilik" class="owner-photo">
+                <p>Pemilik Le Chaussée, <strong>Reisya Nazwa Anindya</strong>, adalah seorang profesional di bidang fashion yang memiliki pengalaman lebih dari 10 tahun di industri sepatu.</p>
+            </div>
+
+            <h2>Misi Kami</h2>
+            <p>Misi kami adalah memberikan pengalaman berbelanja yang menyenangkan dan memuaskan bagi semua pelanggan kami. Kami percaya bahwa setiap langkah Anda harus penuh gaya.</p>
+
+            <h2>Hubungi Kami</h2>
+            <p>Jika Anda memiliki pertanyaan atau umpan balik, silakan hubungi kami melalui email di <a href="mailto:info@lechausse.com">info@lechausse.com</a>. Kami senang mendengar dari Anda!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Le Chaussée. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

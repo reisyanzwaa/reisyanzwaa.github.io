@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Le Chaussée</title>
+    <link rel="stylesheet" href="css_registrasi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Registrasi</h2>
+        <form id="registrationForm" action="php_register.php" method="POST"> <!-- Mengarah ke php_register.php -->
+            <div class="input-group">
+                <input type="text" name="nama" placeholder="Nama Lengkap" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="input-group">
+                <input type="number" name="nomorTelepon" placeholder="nomorTelepon" required>
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" name="kataSandi" placeholder="Kata Sandi" required>
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" name="konfirmasiKataSandi" placeholder="Konfirmasi Kata Sandi" required>
+                <i class="fas fa-lock"></i>
+            </div>
+            <button type="submit">Daftar</button>
+        </form>
+        <p class="login-prompt">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Le Chaussée. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* css_about.css */
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins untuk body */
+    background: rgba(240, 244, 248, 0.8); /* Warna latar belakang yang lebih soft */
+    color: #333;
+    line-height: 1.6;
+    overflow-y: auto; /* Memastikan konten bisa digulir secara vertikal */
+}
+
+/* Video Background */
+.video-background {
+    position: fixed; /* Memastikan video berada di latar belakang */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga proporsi video */
+    z-index: -1; /* Mengirim video ke belakang */
+}
+
+/* Header Styles */
+header {
+    background: rgba(74, 144, 226, 0.8); /* Warna latar belakang header dengan transparansi */
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Menjaga posisi header tetap di atas */
+    z-index: 1; /* Mengangkat header di atas video */
+    animation: slideDown 0.5s ease; /* Animasi saat header muncul */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.logo img {
+    height: 120px; /* Ukuran logo lebih besar */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px; /* Margin antar menu */
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins untuk menu */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Tambahkan garis bawah saat hover */
+    transform: scale(1.1); /* Efek pembesaran saat hover */
+}
+
+/* About Section Styles */
+.about-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan transparansi */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Mulai dengan transparan */
+    transform: translateY(20px); /* Mulai sedikit ke bawah */
+    animation: fadeInUp 0.8s forwards; /* Animasi saat bagian about muncul */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header di About Section */
+.about-section h1 {
+    font-family: 'Lora', serif; /* Menggunakan font Lora untuk judul */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4A90E2; /* Warna header */
+    animation: popIn 0.6s ease forwards; /* Animasi saat judul muncul */
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.about-content h2 {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins untuk header h2 */
+    font-size: 1.8rem;
+    margin-top: 30px;
+    color: #333; /* Warna header */
+    border-bottom: 2px solid #4A90E2; /* Garis bawah */
+    padding-bottom: 10px;
+    animation: fadeIn 0.5s forwards; /* Animasi saat header h2 muncul */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content p {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins untuk paragraf */
+    margin: 15px 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555; /* Warna abu-abu gelap */
+    opacity: 0; /* Mulai dengan transparan */
+    animation: fadeInText 0.6s forwards; /* Animasi saat teks muncul */
+    animation-delay: 0.2s; /* Delay untuk teks */
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Owner Section Styles */
+.owner-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e1f5fe; /* Latar belakang lebih lembut */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Mulai dengan transparan */
+    animation: fadeInUp 0.8s forwards; /* Animasi saat owner section muncul */
+    animation-delay: 0.3s; /* Delay untuk bagian pemilik */
+}
+
+.owner-photo {
+    width: 250px; /* Ukuran foto lebih besar */
+    height: 250px; /* Ukuran foto lebih besar */
+    border-radius: 50%; /* Bentuk lingkaran */
+    margin-right: 20px;
+    border: 3px solid #4A90E2; /* Border cerah */
+    transition: transform 0.3s ease; /* Transisi efek */
+}
+
+.owner-photo:hover {
+    transform: scale(1.1); /* Efek pembesaran saat hover */
+}
+
+.owner-section p {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins untuk teks pemilik */
+    font-size: 1.1rem;
+    color: #666; /* Warna abu-abu */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(74, 144, 226, 0.8); /* Warna footer dengan transparansi */
+    color: #ffffff;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-section {
+        width: 90%; /* Lebar lebih lebar di perangkat kecil */
+    }
+
+    .owner-photo {
+        width: 180px; /* Ukuran foto lebih kecil di perangkat kecil */
+        height: 180px; /* Ukuran foto lebih kecil di perangkat kecil */
+    }
+
+    .logo img {
+        height: 100px; /* Ukuran logo lebih kecil di perangkat kecil */
+    }
+}
+
+/* Gaya untuk mode gelap */
+body.dark-mode {
+    background-color: #121212; /* Warna latar belakang gelap */
+    color: #ffffff; /* Warna teks putih */
+}
+
+/* Gaya tambahan untuk elemen lain saat mode gelap */
+body.dark-mode header {
+    background: rgba(50, 50, 50, 0.9); /* Latar belakang header lebih gelap */
+}
+
+body.dark-mode .about-section {
+    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang tentang lebih gelap */
+    color: #ffffff; /* Pastikan teks dalam about section menjadi putih */
+}
+
+body.dark-mode nav a {
+    color: #ffffff; /* Warna teks menu menjadi putih */
+}
+
+body.dark-mode footer {
+    background: rgba(50, 50, 50, 0.9); /* Warna footer gelap */
+    color: #ffffff; /* Pastikan warna teks footer menjadi putih */
+}
+
+/* Pastikan tulisan di section About juga terlihat jelas */
+body.dark-mode .about-content h2,
+body.dark-mode .about-content p {
+    color: #ffffff; /* Ubah warna teks header dan paragraf menjadi putih */
+}
+
+/* Tambahan untuk elemen lainnya yang mungkin belum terlihat */
+body.dark-mode .owner-section {
+    background-color: #1e1e1e; /* Background lebih gelap untuk section pemilik */
+    color: #ffffff; /* Warna teks pemilik section menjadi putih */
+}
+
+body.dark-mode .owner-section p {
+    color: #dddddd; /* Warna teks abu-abu lebih terang untuk keterbacaan */
+}
+
+body.dark-mode .owner-photo {
+    border: 3px solid #ffffff; /* Border putih untuk foto pemilik */
+}
+
+/* Pastikan semua teks di dalam paragraf dan header terlihat */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p {
+    color: #ffffff; /* Mengatur warna semua heading dan paragraf */
+}
+
+/* Untuk memastikan bahwa menu hover tetap terlihat */
+body.dark-mode nav a:hover {
+    text-decoration: underline; /* Garis bawah tetap terlihat */
+    transform: scale(1.1); /* Efek pembesaran saat hover */
+}
+
+/* Gaya untuk logo dalam mode gelap */
+body.dark-mode .logo img {
+    /* Jika logo adalah gambar PNG atau SVG, pastikan warna/logo kontras terlihat */
+    filter: brightness(0) invert(1); /* Mengubah gambar logo menjadi putih (untuk logo yang gelap) */
+}
+
+/* Jika logo berupa teks */
+body.dark-mode .logo {
+    color: #ffffff; /* Ubah warna teks logo menjadi putih */
+}

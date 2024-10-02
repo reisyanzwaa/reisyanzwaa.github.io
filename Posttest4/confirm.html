@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Chaussée - Konfirmasi Pembayaran</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="baglogo.png" alt="Logo Le Chaussée">
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Konfirmasi Pembayaran -->
+    <section class="confirmation-section">
+        <h2>Konfirmasi Pembayaran</h2>
+        <div class="confirmation-message">
+            <script>
+                // Mengambil query string dari URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const name = urlParams.get('name');
+                const address = urlParams.get('address');
+                const paymentMethod = urlParams.get('payment-method');
+
+                // Menampilkan informasi pengguna
+                document.write(`<h3>Terima kasih, ${name}!</h3>`);
+                document.write(`<p>Pesanan Anda telah berhasil dikonfirmasi. Berikut adalah detail pesanan Anda:</p>`);
+                document.write(`<div class="order-summary">`);
+                document.write(`<p><strong>Produk:</strong> Nike Air Max 2021</p>`);
+                document.write(`<p><strong>Jumlah:</strong> 1</p>`);
+                document.write(`<p><strong>Total Pembayaran:</strong> Rp 2,499,000</p>`);
+                document.write(`<p><strong>Alamat Pengiriman:</strong> ${address}</p>`);
+                document.write(`<p><strong>Metode Pembayaran:</strong> ${paymentMethod}</p>`);
+                document.write(`<p><strong>Status Pengiriman:</strong> Dalam Proses</p>`);
+                document.write(`</div>`);
+                document.write(`<p>Anda akan menerima email konfirmasi dan informasi lebih lanjut mengenai pengiriman segera.</p>`);
+            </script>
+            <button onclick="window.location.href='index.html'" class="back-btn">Kembali ke Beranda</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Le Chaussée. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
