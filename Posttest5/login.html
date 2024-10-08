@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Le Chaussée</title>
+    <link rel="stylesheet" href="css_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="kataSandi" placeholder="Kata Sandi" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="number" name="nomorTelepon" placeholder="Nomor Telepon" required>
+            </div>
+            <button type="submit">Masuk</button>
+        </form>
+        <p class="register-prompt">Belum punya akun? <a href="registrasi.html">Daftar di sini</a></p>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Le Chaussée. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('#loginForm');
+
+            form.addEventListener('submit', (event) => {
+                // Mencegah form dari pengiriman default
+                event.preventDefault();
+
+                // Mengambil nilai input
+                const email = form.querySelector('input[name="email"]').value;
+                const kataSandi = form.querySelector('input[name="kataSandi"]').value;
+                const nomorTelepon = form.querySelector('input[name="nomorTelepon"]').value;
+
+                // Validasi
+                if (email === '' || kataSandi === '' || nomorTelepon === '') {
+                    alert('Semua field harus diisi!');
+                    return;
+                }
+
+                // Mengirim data ke server dengan Fetch API
+                const data = {
+                    email: email,
+                    kataSandi: kataSandi,
+                    nomorTelepon: nomorTelepon
+                };
+
+                fetch('login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                })
+                .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+                })
+                .then(data => {
+                console.log('Data yang diterima:', data);
+                if (data.success) {
+                    console.log('Login berhasil!');
+                    window.location.href = 'dashboard.html';
+                } else {
+                    console.log('Login gagal:', data.message);
+                }
+                })
+                .catch((error) => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

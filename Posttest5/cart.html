@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <link rel="stylesheet" href="css_cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <video autoplay muted loop class="video-background">
+        <source src="vidoooo.mp4" type="video/mp4"> <!-- Ganti dengan path video Anda -->
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Display</h1>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="login.html">Akun</a>
+            <a href="favorites.html">Favorit</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Isi Keranjang</h2>
+        
+        <div>
+            <button class="category-button" onclick="showCategory('formal')">Produk Formal</button>
+            <button class="category-button" onclick="showCategory('non-formal')">Produk Non-Formal</button>
+            <button class="category-button" onclick="showCategory('sport')">Sepatu Olahraga</button>
+        </div>
+    
+        <!-- Kategori Formal -->
+        <div id="cart-list-formal" class="cart-list" style="display: none;">
+            <h3>Produk Formal</h3>
+            
+            <div id="formal-male" class="cart-sub-category" style="display: block;">
+              
+                <div class="cart-item">
+                    <div class="item-gallery">
+                        <img src="kerjagaris-removebg-preview.png" alt="Produk Formal Pria 1" class="gallery-image">
+                        <img src="kerjagarisdepan-removebg-preview.png" alt="Produk Formal Pria 1 - 2" class="gallery-image">
+                    </div>
+                    <div class="item-details">
+                        <h5>Produk Formal Pria 1</h5>
+                        <p>Deskripsi singkat tentang Produk Formal Pria 1.</p>
+                        <p>Harga: Rp. 750.000</p>
+                        <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <div class="item-gallery">
+                        <img src="potongkerja-removebg-preview.png" alt="Produk Formal Pria 3" class="gallery-image">
+                        <img src="potongkerjacoklat-removebg-preview.png" alt="Produk Formal Pria 3 - 2" class="gallery-image">
+                    </div>
+                    <div class="item-details">
+                        <h5>Produk Formal Pria 3</h5>
+                        <p>Deskripsi singkat tentang Produk Formal Pria 3.</p>
+                        <p>Harga: Rp. 800.000</p>
+                        <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="formal-female" class="cart-sub-category" style="display: none;">
+                <h4>Produk Formal Wanita</h4>
+                <div class="cart-item">
+                    <div class="item-gallery">
+                        <img src="formalcoklat-removebg-preview.png" alt="Produk Formal Wanita 1" class="gallery-image">
+                        <img src="formalkuning-removebg-preview.png" alt="Produk Formal Wanita 1 - 2" class="gallery-image">
+                        <img src="formalsilver-removebg-preview.png" alt="Produk Formal Wanita 1 - 3" class="gallery-image">
+                    </div>
+                    <div class="item-details">
+                        <h5>Produk Formal Wanita 1</h5>
+                        <p>Deskripsi singkat tentang Produk Formal Wanita 1.</p>
+                        <p>Harga: Rp. 750.000</p>
+                        <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                    </div>
+                </div>
+                <div class="cart-item">
+                    <div class="item-gallery">
+                        <img src="lipathitam-removebg-preview.png" alt="Produk Formal Wanita 2" class="gallery-image">
+                        <img src="lipatputih-removebg-preview.png" alt="Produk Formal Wanita 2 - 2" class="gallery-image">
+                    </div>
+                    <div class="item-details">
+                        <h5>Produk Formal Wanita 2</h5>
+                        <p>Deskripsi singkat tentang Produk Formal Wanita 2.</p>
+                        <p>Harga: Rp. 800.000</p>
+                        <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Kategori Non-Formal -->
+        <div id="cart-list-non-formal" class="cart-list" style="display: none;">
+            <h3>Produk Non-Formal</h3>
+            <div class="cart-item">
+                <div class="item-gallery">
+                    <img src="sepatu_rbiru-removebg-preview.png" alt="Produk Non-Formal 1" class="gallery-image">
+                    <img src="sepatu_rputiih-removebg-preview.png" alt="Produk Non-Formal 1 - 2" class="gallery-image">
+                    <img src="sepatu_ungu-removebg-preview.png" alt="Produk Non-Formal 1 - 3" class="gallery-image">
+                </div>
+                <div class="item-details">
+                    <h4>Produk Non-Formal 1</h4>
+                    <p>Deskripsi singkat tentang Produk Non-Formal 1.</p>
+                    <p>Harga: Rp. 500.000</p>
+                    <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="item-gallery">
+                    <img src="bintangpink-removebg-preview.png" alt="Produk Non-Formal 2" class="gallery-image">
+                    <img src="bntanghitam-removebg-preview.png" alt="Produk Non-Formal 2 - 2" class="gallery-image">
+                </div>
+                <div class="item-details">
+                    <h4>Produk Non-Formal 2</h4>
+                    <p>Deskripsi singkat tentang Produk Non-Formal 2.</p>
+                    <p>Harga: Rp. 600.000</p>
+                    <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="item-gallery">
+                    <img src="pinkgaris-removebg-preview.png" alt="Produk Non-Formal 3" class="gallery-image">
+                    <img src="putihgaris-removebg-preview.png" alt="Produk Non-Formal 3 - 2" class="gallery-image">
+                    <img src="birugaris-removebg-preview.png" alt="Produk Non-Formal 3 - 3" class="gallery-image">
+                </div>
+                <div class="item-details">
+                    <h4>Produk Non-Formal 3</h4>
+                    <p>Deskripsi singkat tentang Produk Non-Formal 3.</p>
+                    <p>Harga: Rp. 500.000</p>
+                    <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="item-gallery">
+                    <img src="sayappink-removebg-preview.png" alt="Produk Non-Formal 4" class="gallery-image">
+                    <img src="sayapputih-removebg-preview.png" alt="Produk Non-Formal 4 - 2" class="gallery-image">
+                </div>
+                <div class="item-details">
+                    <h4>Produk Non-Formal 4</h4>
+                    <p>Deskripsi singkat tentang Produk Non-Formal 4.</p>
+                    <p>Harga: Rp. 600.000</p>
+                    <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Kategori Olahraga -->
+        <div id="cart-list-sport" class="cart-list" style="display: none;">
+            <h3>Sepatu Olahraga</h3>
+            <div class="cart-item">
+                <div class="item-gallery">
+                    <img src="olgabolongpink-removebg-preview.png" alt="Sepatu Olahraga 1" class="gallery-image">
+                    <img src="olgabolongungu-removebg-preview.png" alt="Sepatu Olahraga 1 - 2" class="gallery-image">
+                </div>
+                <div class="item-details">
+                    <h4>Sepatu Olahraga 1</h4>
+                    <p>Deskripsi singkat tentang Sepatu Olahraga 1.</p>
+                    <p>Harga: Rp. 900.000</p>
+                    <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="item-gallery">
+                    <img src="tembusbiru-removebg-preview.png" alt="Sepatu Olahraga 2" class="gallery-image">
+                    <img src="tembushijau-removebg-preview (1).png" alt="Sepatu Olahraga 2 - 2" class="gallery-image">
+                </div>
+                <div class="item-details">
+                    <h4>Sepatu Olahraga 2</h4>
+                    <p>Deskripsi singkat tentang Sepatu Olahraga 2.</p>
+                    <p>Harga: Rp. 950.000</p>
+                    <button class="remove-item" onclick="removeItem(this)">Hapus</button>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Toko Sepatu. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
+

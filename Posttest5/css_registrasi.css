@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('https://source.unsplash.com/1600x900/?fashion,shoes') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.registration-container {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 400px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #FFB85D;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(255, 100, 100, 0.5);
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF6F61;
+    font-size: 20px;
+}
+
+button {
+    background: #FF6F61;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #FF4C3B;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 76, 59, 0.3);
+}
+
+.login-prompt {
+    margin-top: 20px;
+    color: #FFB85D;
+}
+
+.login-prompt a {
+    color: #FFB85D;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.login-prompt a:hover {
+    color: #FF6F61;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-content p {
+    margin: 0;
+}

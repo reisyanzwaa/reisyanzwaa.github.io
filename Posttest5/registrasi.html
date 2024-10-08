@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Le Chaussée</title>
+    <link rel="stylesheet" href="css_registrasi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="registration-container">
+        <h2>Registrasi</h2>
+        <form id="registrationForm">
+            <div class="input-group">
+                <input type="text" name="nama" placeholder="Nama Lengkap" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" name="kataSandi" placeholder="Kata Sandi" required>
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" name="konfirmasiKataSandi" placeholder="Konfirmasi Kata Sandi" required>
+                <i class="fas fa-lock"></i>
+            </div>
+            <button type="submit">Daftar</button>
+        </form>
+        <p class="login-prompt">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Le Chaussée. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('#registrationForm');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const nama = form.querySelector('input[name="nama"]').value;
+                const email = form.querySelector('input[name="email"]').value;
+                const kataSandi = form.querySelector('input[name="kataSandi"]').value;
+                const konfirmasiKataSandi = form.querySelector('input[name="konfirmasiKataSandi"]').value;
+
+                if (kataSandi !== konfirmasiKataSandi) {
+                    alert('Kata sandi dan konfirmasi kata sandi tidak cocok!');
+                    return;
+                }
+
+                const data = {
+                    nama: nama,
+                    email: email,
+                    kataSandi: kataSandi,
+                };
+
+                fetch('register.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Jaringan tidak responsif');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        alert('Registrasi berhasil!');
+                        window.location.href = 'success.php?email=' + encodeURIComponent(data.email);
+                    } else {
+                        alert(data.message); // Notifikasi kesalahan dari server
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Terjadi kesalahan. Silakan coba lagi.'); // Menampilkan pesan kesalahan umum
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
