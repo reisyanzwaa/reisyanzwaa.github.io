@@ -1,0 +1,174 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Gradasi cerah */
+    color: #fff; /* Warna teks putih */
+    overflow: hidden;
+}
+
+/* Video Background */
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Header */
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan untuk teks */
+}
+
+/* Navigation Icons */
+
+.nav-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Latar belakang gelap semi-transparan */
+    border-bottom: 2px solid #ffc3a0; /* Garis bawah */
+    position: relative;
+    z-index: 1;
+}
+
+.nav-icons > div {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.nav-icons i {
+    font-size: 28px;
+    color: #ffc3a0; /* Warna ikon */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-icons i:hover {
+    transform: scale(1.2); /* Memperbesar ikon saat hover */
+    color: #ffafbd; /* Warna saat hover */
+}
+
+/* Search Form */
+
+#search-form {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih */
+    border-radius: 15px; /* Sudut membulat */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333; /* Warna teks gelap */
+}
+
+#search-form select,
+#search-form input[type="text"] {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid #ffafbd; /* Garis tepi berwarna */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+#search-form select:focus,
+#search-form input[type="text"]:focus {
+    outline: none;
+    border-color: #ffc3a0; /* Garis tepi saat fokus */
+}
+
+#search-form button[type="submit"] {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: #ffafbd; /* Warna tombol */
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* Sudut membulat */
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#search-form button[type="submit"]:hover {
+    background-color: #ffc3a0; /* Warna lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek angkat saat hover */
+}
+
+/* Search Results */
+
+#search-results {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih */
+    border-radius: 15px; /* Sudut membulat */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-results > div {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Garis bawah */
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#search-results > div:hover {
+    background-color: rgba(255, 192, 160, 0.2); /* Latar belakang saat hover */
+}
+
+#search-results h2 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Warna teks gelap */
+}
+
+#search-results p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666; /* Warna teks abu-abu */
+}
+

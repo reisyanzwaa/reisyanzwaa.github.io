@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Chaussée - Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="baglogo.png" alt="Logo Le Chaussée">
+            </div>
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-section">
+        <h2>Checkout</h2>
+        <form class="checkout-form" onsubmit="return handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Alamat Pengiriman</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Metode Pembayaran</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="credit-card">Kartu Kredit</option>
+                    <option value="bank-transfer">Transfer Bank</option>
+                    <option value="e-wallet">E-Wallet (OVO, GoPay, dll.)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="shipping">Metode Pengiriman</label>
+                <select id="shipping" name="shipping" required>
+                    <option value="regular">Reguler (3-5 hari kerja)</option>
+                    <option value="express">Ekspres (1-2 hari kerja)</option>
+                </select>
+            </div>
+
+            <div class="order-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <p><strong>Produk:</strong> Nike Air Max 2021</p>
+                <p><strong>Harga:</strong> Rp 2,499,000</p>
+                <p><strong>Ongkir:</strong> Rp 30,000</p>
+                <p><strong>Total:</strong> Rp 2,529,000</p>
+            </div>
+
+            <button type="submit" class="checkout-btn">Konfirmasi Pembayaran</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Le Chaussée. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            // Mengambil data dari form
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            // Membuat URL query string
+            const queryString = `?name=${encodeURIComponent(name)}&address=${encodeURIComponent(address)}&payment-method=${encodeURIComponent(paymentMethod)}`;
+
+            // Mengarahkan ke halaman konfirmasi pembayaran
+            window.location.href = `confirm.html${queryString}`;
+        }
+    </script>
+</body>
+
+</html>
